@@ -1,9 +1,10 @@
 # encoding=utf-8
 
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__, template_folder='templates')
-
+bootstrap = Bootstrap(app)
 
 # @app.before_request
 # def before_request():
@@ -17,12 +18,12 @@ def index():
 
 @app.route('/home/<name>')
 def home(name):
-    return render_template('hello.html', name=name)
+    return render_template('user.html', name=name)
 
 
 @app.route('/home/test')
 def test():
-    return render_template('index.html')
+    return render_template('test.html')
 
 # @app.after_request
 # def after_request(response):
